@@ -5,11 +5,11 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 import os
 
-def ImgRead(password):
+def ImgRead(password,path):
     password = password.encode()
     salt = b'+,\x8aJ\xb3x\x95{\xbb\x98\x01\x19\xad9i\xb9'#os.urandom(16)
     iv = b'\xf8@\xac]\x10\x0c\xa3\x1e\xa6\x9d1I\xee\xcb\xe5('#os.urandom(16)
-    ciphertext_hex = exifHeader.reveal("image2.jpg").decode()  # Например: "1a2b3c4d5e6f..."
+    ciphertext_hex = exifHeader.reveal(path).decode()  # Например: "1a2b3c4d5e6f..."
     ciphertext = bytes.fromhex(ciphertext_hex)  # Конвертируем hex в байты
 
     # 3. Расшифровка
