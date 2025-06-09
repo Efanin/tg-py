@@ -5,7 +5,7 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 import os
 
-def ImgWrite(password, message):
+async def ImgWrite(password, message, path):
     password = password.encode()
     message = message.encode('utf-8')
     salt = b'+,\x8aJ\xb3x\x95{\xbb\x98\x01\x19\xad9i\xb9'#os.urandom(16)
@@ -32,4 +32,4 @@ def ImgWrite(password, message):
     ciphertext = encryptor.update(padded_data) + encryptor.finalize()
 
     print("Зашифрованное сообщение (hex):", ciphertext.hex())
-    secret = exifHeader.hide("image.jpg","image2.jpg", ciphertext.hex())
+    await exifHeader.hide(path, path, ciphertext.hex())
