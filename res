@@ -8,6 +8,4 @@ pip install cryptography
 https://docs.aiogram.dev/en/latest/
 @BotFather
 
-pip install stegano
-pip install wheel steganocryptopy
-
+https://pypi.org/project/aiosqlite/
