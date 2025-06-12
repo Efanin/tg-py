@@ -1,6 +1,4 @@
 python -m pip install --upgrade pip
-python -m venv .venv
-.venv\Scripts\activate
 pip install aiogram
 pip install stegano
 pip install cryptography
