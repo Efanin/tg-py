@@ -3,14 +3,16 @@ import logging
 import sys
 from os import getenv
 import os
-from aiogram import Bot, Dispatcher, html, Router, F
+from datetime import datetime
+from aiogram import Bot, Dispatcher, html, F, types, Router
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart, Command
-from aiogram.types import Message
-from functools import wraps
+from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, FSInputFile
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
+import aiosqlite
 import mode
-
 # Bot token can be obtained via https://t.me/BotFather
 bot = Bot("token")
 
