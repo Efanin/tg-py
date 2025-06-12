@@ -7,3 +7,5 @@ https://docs.aiogram.dev/en/latest/
 @BotFather
 
 https://pypi.org/project/aiosqlite/
+
+pip install aiosqlite
